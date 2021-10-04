@@ -3,9 +3,11 @@
 	"version": "0.1.0",
 	"private": true,
 	"dependencies": {
-		"npm-package-template": "../",
+		"axios": "^0.22.0",
 		"react": "../node_modules/react",
 		"react-dom": "../node_modules/react-dom",
+		"react-query": "../node_modules/react-query",
+		"react-query-use-once": "../",
 		"react-scripts": "../node_modules/react-scripts"
 	},
 	"scripts": {

@@ -1,9 +1,19 @@
 import logo from './logo.svg'
 import './App.css'
-import useTemplate from 'npm-package-template'
+import { useQueryOnce } from 'react-query-use-once'
+import axios from 'axios'
+
+async function fetchCharacters() {
+	const { data } = await axios.get('https://swapi.dev/api/people/')
+	return data
+}
 
 function App() {
-	console.log(useTemplate())
+	const { data, error, isError, isLoading } = useQueryOnce(
+		'characters',
+		fetchCharacters
+	)
+
 	return (
 		<div className="App">
 			<header className="App-header">

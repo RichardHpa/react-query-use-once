@@ -28,6 +28,7 @@ export default [
 				name: 'npmPackageTemplate',
 			},
 		],
+		external: ['react-query'],
 		plugins: [
 			postcss({
 				plugins: [],
