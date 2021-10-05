@@ -1,6 +1,7 @@
+import { useEffect } from 'React'
 import logo from './logo.svg'
 import './App.css'
-import { useQueryOnce } from 'react-query-use-once'
+import useQueryOnce from 'react-query-use-once'
 import axios from 'axios'
 
 async function fetchCharacters() {
@@ -9,10 +10,10 @@ async function fetchCharacters() {
 }
 
 function App() {
-	const { data, error, isError, isLoading } = useQueryOnce(
-		'characters',
-		fetchCharacters
-	)
+	const { data } = useQueryOnce('characters', fetchCharacters)
+	useEffect(() => {
+		console.log(data)
+	}, [data])
 
 	return (
 		<div className="App">

@@ -1,6 +1,6 @@
 import { useQuery } from 'react-query'
 
-export const useQueryOnce = (key, query, params = {}) => {
+const useQueryOnce = (key, query, params = {}) => {
 	const queryResult = useQuery(key, query, {
 		refetchInterval: false,
 		refetchIntervalInBackground: false,
@@ -10,3 +10,5 @@ export const useQueryOnce = (key, query, params = {}) => {
 	})
 	return queryResult
 }
+
+module.exports = useQueryOnce

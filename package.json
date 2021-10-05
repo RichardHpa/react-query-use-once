@@ -1,7 +1,7 @@
 {
 	"name": "react-query-use-once",
 	"version": "0.0.0-development",
-	"description": "A basic template for a npm package",
+	"description": "A extension for react-query to prevent auto refetching of a query.",
 	"main": "dist/index.js",
 	"scripts": {
 		"build": "rollup -c",
