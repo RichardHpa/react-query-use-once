@@ -1,7 +1,7 @@
 import { jest } from '@jest/globals';
 import { renderHook } from '@testing-library/react-hooks';
 import { QueryClient, QueryClientProvider } from 'react-query';
-import useQueryOnce from '.';
+import { useQueryOnce } from '.';
 
 const fetchFromApi = async url => {
   const res = await fetch(url);

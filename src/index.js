@@ -1,14 +1,14 @@
-import { useQuery } from 'react-query'
+import { useQuery } from 'react-query';
 
 const useQueryOnce = (key, query, params = {}) => {
-	const queryResult = useQuery(key, query, {
-		refetchInterval: false,
-		refetchIntervalInBackground: false,
-		refetchOnWindowFocus: false,
-		refetchOnReconnect: false,
-		...params,
-	})
-	return queryResult
-}
+  const queryResult = useQuery(key, query, {
+    refetchInterval: false,
+    refetchIntervalInBackground: false,
+    refetchOnWindowFocus: false,
+    refetchOnReconnect: false,
+    ...params,
+  });
+  return queryResult;
+};
 
-module.exports = useQueryOnce
+module.exports = { useQueryOnce };
