@@ -26,34 +26,34 @@ $ npm install react-query-use-once
 ## Example
 
 ```javascript
-import useQueryOnce from 'react-query-use-once'
-import { QueryClient, QueryClientProvider } from 'react-query'
+import { useQueryOnce } from 'react-query-use-once';
+import { QueryClient, QueryClientProvider } from 'react-query';
 
-const queryClient = new QueryClient()
+const queryClient = new QueryClient();
 
 export default function App() {
-	return (
-		<QueryClientProvider client={queryClient}>
-			<Example />
-		</QueryClientProvider>
-	)
+  return (
+    <QueryClientProvider client={queryClient}>
+      <Example />
+    </QueryClientProvider>
+  );
 }
 
 function Example() {
-	// Retrieve information about Luke Skywalker from Star Wars
-	const { isLoading, error, data } = useQueryOnce('repoData', () =>
-		fetch('https://swapi.dev/api/people/1/').then((res) => res.json())
-	)
+  // Retrieve information about Luke Skywalker from Star Wars
+  const { isLoading, error, data } = useQueryOnce('repoData', () =>
+    fetch('https://swapi.dev/api/people/1/').then(res => res.json())
+  );
 
-	if (isLoading) return 'Loading...'
+  if (isLoading) return 'Loading...';
 
-	return (
-		<div>
-			<h1>{data.name}</h1>
-			<p>{data.birth_year}</p>
-			<p>{data.gender}</p>
-		</div>
-	)
+  return (
+    <div>
+      <h1>{data.name}</h1>
+      <p>{data.birth_year}</p>
+      <p>{data.gender}</p>
+    </div>
+  );
 }
 ```
 
